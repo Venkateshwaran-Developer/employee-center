@@ -18,7 +18,7 @@ const [isEdit,setIsEdit]=useState('');
 const navigate = useNavigate();
   
 useEffect(()=>{
-  axios.get('http://localhost:8000/api/v1/employee')
+  axios.get('https://employee-center-backend.onrender.com/api/v1/employee')
   .then((res)=>{
     setEmp(res.data)
    })
@@ -37,7 +37,7 @@ useEffect(()=>{
   
       console.log(emp_id);
       
-      fetch('http://localhost:8000/api/v1/employee/delete/'+emp_id,{
+      fetch('https://employee-center-backend.onrender.com/api/v1/employee/delete/'+emp_id,{
         method:'DELETE'
       }).then(()=>{
         const updatedEmp = emp.filter((emp)=> emp._id !== emp_id)
@@ -71,7 +71,7 @@ useEffect(()=>{
       <div className="card flex flex-col justify-center items-center h-[620px] w-96 bg-black rounded-3xl">
         
           <img
-            src={`http://localhost:8000/images/`+user.image}
+            src={`https://employee-center-backend.onrender.com/images/`+user.image}
             className="w-[170px] mt-5 h-60 rounded-full object-cover"
             alt="car!"
           />

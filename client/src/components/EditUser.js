@@ -33,7 +33,7 @@ console.log(editId);
 
         useEffect(()=>{       
           const fetchSingleData = ()=>{
-            axios.get('http://localhost:8000/api/v1/employee/'+editId)
+            axios.get('https://employee-center-backend.onrender.com/api/v1/employee/'+editId)
              .then((editEmployee)=>{
                seteditUser({
                name:editEmployee.data.name,
@@ -75,7 +75,7 @@ console.log(editId);
         formData.append('address', editUser.address);
         formData.append('image', editUser.image);
       
-        fetch(`http://localhost:8000/api/v1/employee/update/${editId}`, {
+        fetch(`https://employee-center-backend.onrender.com/api/v1/employee/update/${editId}`, {
           method: 'PUT',
           body: formData
       })
@@ -88,7 +88,7 @@ console.log(editId);
           console.error('Error:', error);
           // Handle error (e.g., show error message)
       });
-        axios.put('http://localhost:8000/api/v1/employee/update/' + editId, formData)
+        axios.put('https://employee-center-backend.onrender.com/api/v1/employee/update/' + editId, formData)
           .then((res) => {
             
               setEmp(emp.map((user) => {
